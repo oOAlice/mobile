@@ -1,0 +1,94 @@
+
+html{
+	font-size: 16px;
+}
+h3{
+	/*横跨所有列*/
+	column-span: all;
+}
+div{
+	/*设置3列*/
+	column-count: 3;
+	/*每列宽度是300，缩小窗口不足300时，就减少列数*/
+	column-width: 300px;
+	/*类似于边框的列的分割线*/
+	column-rule:3px dashed #FF562F;
+	/*列与列之间的间距*/
+	column-gap: 50px;
+	/*填充方式:auto,balance,主流浏览器现在不支持*/
+	column-fill: balance;
+	float: left;
+}
+p{
+	/*根元素字号是16px 1rem就表示16个像素点*/
+	font-size: 1rem;
+}
+ul{
+	float: left;
+}
+ul li{
+	width: 100px;
+	height: 40px;
+	margin-left: 1rem;
+	float: left;
+	border: 4px solid #858585;
+}
+
+/*em rem
+  	em:也是一个类似于百分比的单位，相对于父元素的比例
+  	rem:1.对于根元素字号的比例，根18号字=2rem ->可以让小的屏幕展示更多的内容，并且可以按照屏幕的宽度设置字号（小屏幕设置小字号）（大屏幕设置大字号）
+  		2.若所有的宽高字号都用rem表示，所有的内容展示的宽高字号都是响应式的
+  		注：根元素  html{font-size:16px;}*/
+  		
+/*设备宽度是800-1200的时候，这个宽度是设备宽度，不是电脑窗口*/
+/*@media (min-device-width:800px) and (max-device-width:1200px){
+	html{
+		font-size: 30px;
+		background: bisque;
+	}
+}*/
+
+/*电脑屏幕600以上都有*/
+/*device的没用*/
+/*@media (min-width: 600px) or (min-device-width:600px){
+	html{
+		background: #B2B168;
+	}
+}*/
+
+/*手机<768*/
+@media (max-width:768px){
+    html {
+        background-color: #8B4513;
+    }
+    ul{
+    	display: none;
+    }
+}
+/*平板768-992*/
+@media (min-width:768px) and (max-width:992px){
+	html{
+		background: #EEEEEE;
+	}
+	ul{
+		display: block;
+	}
+}
+/*笔记本*/
+@media (min-width:992px) and (max-width:1200px){
+	html{
+		background: #FF562F;
+	}
+	ul{
+		display: block;
+	}
+}
+/*台式*/
+@media (min-width:1200px){
+	html{
+		background: #FFF85C;
+	}
+	ul{
+		display: block;
+	}
+}
